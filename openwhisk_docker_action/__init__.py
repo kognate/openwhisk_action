@@ -9,7 +9,7 @@ class Action(flask.Flask):
         self.add_url_rule('/run', 'run', self.runner, methods=['POST'])
         self._func = None
         self._port = 8080
-        self_host = '0.0.0.0'
+        self._host = '0.0.0.0'
 
     def setPort(port):
         self._port = port
