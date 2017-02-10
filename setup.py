@@ -8,7 +8,7 @@ except IOError:
 
 setup(
     name="openwhisk_docker_action",
-    version="0.1.1",
+    version="0.1.2",
     description="A class to make writing openwhisk docker actions easier to write in python",
     license="MIT",
     author="Joshua B. Smith",
