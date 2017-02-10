@@ -8,6 +8,14 @@ class Action(flask.Flask):
         self.add_url_rule('/init', 'init', self.initroute, methods=['POST'])
         self.add_url_rule('/run', 'run', self.runner, methods=['POST'])
         self._func = None
+	self._port = 8080
+	self_host = '0.0.0.0'
+
+    def setPort(port):
+	self._port = port
+
+    def setHost(host):
+	self._host = host
 
     def initroute(self):
         return flask.Response('{}',
@@ -39,4 +47,4 @@ class Action(flask.Flask):
 
     def main(self,func):
         self._func = func
-        self.run(host='0.0.0.0')
+        self.run(host=self._host, port=self._port)
