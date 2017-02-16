@@ -34,7 +34,6 @@ class Action(flask.Flask):
             params = {}
             if full_params:
                 params = full_params
-            print(full_params)
             results = self._func(params)
             return flask.Response(response=self.json_dict(results),
                                   status=200,
